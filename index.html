@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    Testing Salt to make user passwords more secure than typical dictionary pw
+    (sha256 cryptographic hashing algorithm)
+    Using npm js-sha256 module
+
+    Server Methods: ( these are the Wookie server instructables)
+    GET / - returns this webpage
+    
+    POST /register - register new account
+    {usr: 'username', password: 'hashed password', salt:'password salt'}
+    
+    POST /salt - get the salt value for a particular user
+    {usr: 'username'}
+    
+    POST /login - logs a user in to an existing account
+    {usr: 'username', password:'Hased and salted password'}
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Server</title>
+</head>
+    <h1>Login Server</h1>
+
+<body>
+
+    <input id="usr" placeholder="username" type="text">
+    <input id="pw" placeholder="password" type="password">
+    <button id="btn">Register</button>
+
+    <br> <br>
+
+    <input id="usrreturn" placeholder="username" type="text">
+    <input id="pwreturn" placeholder="password" type="password">
+    <button id="btnreturn">Login</button>
+
+<script src="node_modules\js-sha256\src\sha256.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
